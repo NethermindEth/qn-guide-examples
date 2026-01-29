@@ -99,7 +99,6 @@ ln -s ../../scripts/pre-commit-tree.sh .git/hooks/pre-commit
 
 ### Console API
 - [Quicknode Grafana Dashboard Example](./console-api/grafana-dashboard)
-- [usage-alerting](./console-api/usage-alerting)
 
 ### Courses
 - [solana-basics](./courses/solana-basics)
