@@ -17,7 +17,7 @@ This custom exporter fills that gap by exposing usage data from the `v0/usage/rp
 
 - Completed the [Grafana Dashboard guide](https://www.quicknode.com/guides/quicknode-products/console-api/how-to-build-a-grafana-dashboard-to-monitor-your-rpc-infrastructure) (recommended)
 - Prometheus server running
-- Node.js 18+
+- Node.js 20+
 
 ## Quick Start
 

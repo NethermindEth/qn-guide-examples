@@ -11,9 +11,6 @@
  */
 
 import http from "http";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const PORT = parseInt(process.env.EXPORTER_PORT || "9091", 10);
 const API_KEY = process.env.QUICKNODE_API_KEY;
@@ -88,6 +85,13 @@ quicknode_exporter_scrape_success 1
 `;
 }
 
+function escapePrometheusLabel(value: string): string {
+  return value
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, "\\n");
+}
+
 function formatErrorMetrics(error: string): string {
   return `# HELP quicknode_exporter_scrape_success Whether the last scrape was successful (1=success, 0=failure)
 # TYPE quicknode_exporter_scrape_success gauge
@@ -95,7 +99,7 @@ quicknode_exporter_scrape_success 0
 
 # HELP quicknode_exporter_error_info Information about the last error
 # TYPE quicknode_exporter_error_info gauge
-quicknode_exporter_error_info{error="${error.replace(/"/g, '\\"')}"} 1
+quicknode_exporter_error_info{error="${escapePrometheusLabel(error)}"} 1
 `;
 }
 

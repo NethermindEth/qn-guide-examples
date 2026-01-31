@@ -26,7 +26,7 @@ Monitor your Quicknode RPC credit usage and receive proactive alerts before hitt
 
 ## Prerequisites
 
-- Node.js 18+ (for native `fetch` support)
+- Node.js 20+ (for native `fetch` and `--env-file` support)
 - Quicknode account with a paid plan
 - API key with `CONSOLE_REST` permission ([Create API Key](https://dashboard.quicknode.com/api-keys))
 
