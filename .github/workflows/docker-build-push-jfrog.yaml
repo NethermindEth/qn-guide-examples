@@ -14,7 +14,7 @@ jobs:
   build:
     uses: NethermindEth/github-workflows/.github/workflows/docker-build-push-jfrog.yaml@main
     with:
-      group_name: "core"
+      repo_name: "core-oci-local-prod"
       image_name: "quicknode-exporter"
       context: "console-api/usage-alerting"
       dockerfile_path: "console-api/usage-alerting/Dockerfile"
