@@ -1,0 +1,23 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  id-token: write
+  attestations: write
+  contents: read
+
+jobs:
+  build:
+    uses: NethermindEth/github-workflows/.github/workflows/docker-build-push-jfrog.yaml@main
+    with:
+      group_name: "core"
+      image_name: "quicknode-exporter"
+      context: "console-api/usage-alerting"
+      dockerfile_path: "console-api/usage-alerting/Dockerfile"
+      run_trivy: false
