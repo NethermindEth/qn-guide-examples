@@ -168,7 +168,8 @@ async function fetchUsageByMethod(): Promise<MethodUsageResponse> {
 
 // --- Prometheus Formatting ---
 
-function escapePrometheusLabel(value: string): string {
+function escapePrometheusLabel(value: string | null | undefined): string {
+  if (value == null) return "";
   return value
     .replace(/\\/g, "\\\\")
     .replace(/"/g, '\\"')
